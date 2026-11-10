@@ -1,6 +1,6 @@
 # Zhiyuan Chen - Personal Homepage
 
-Single-page academic homepage for `https://chenzhiyuan777.github.io/`, built with
+Single-page academic homepage for `https://zhiyuanchen777.github.io/`, built with
 Astro and deployed through GitHub Pages. The visual system follows the current
 live `https://yangyichu.github.io/` academic homepage, not its older downloaded
 Bootstrap version: Trebuchet MS typography, a white background, `#494e52` body
@@ -25,7 +25,7 @@ Build the production site with:
 npm run build
 ```
 
-The online homepage is `https://chenzhiyuan777.github.io/`. Local `dist/` and
+The online homepage is `https://zhiyuanchen777.github.io/`. Local `dist/` and
 `.astro/` outputs are generated files and remain ignored by Git.
 
 ## Updating content
@@ -213,10 +213,11 @@ Outputs, rollback backups, current archives and operation records stay under
 
 The source resume is intentionally ignored by Git and is not deployed.
 
-The footer retains the required attribution link for the free Developer theme
-from Xiaoying Riley / 3rd Wave Media. The template's original contact form,
-identity data, private files, RSS feed, GitHub activity feed, and calendar are
-not copied into this site.
+<!-- by cgpt: Keep the template design credit in the source documentation. -->
+Design reference: [Developer by Xiaoying Riley / 3rd Wave Media](https://themes.3rdwavemedia.com/).
+The page footer displays the profile name, update year, and Back to top link.
+The template's original contact form, identity data, private files, RSS feed,
+GitHub activity feed, and calendar are not copied into this site.
 
 ## Deployment
 
