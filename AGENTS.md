@@ -100,6 +100,12 @@
 
 ## 文件与协作边界
 
+- by cgpt：唯一维护目录为 `/home/chenzhiyuan/Documents/zhiyuanchen777.github.io`；
+  origin 为 `git@github.com:zhiyuanchen777/zhiyuanchen777.github.io.git`，main 跟踪
+  origin/main。以后用户授权的 commit/push 在此仓库执行，不再使用旧仓库。
+  本地开发预览使用此目录的 `npm run dev -- --host 0.0.0.0 --port 4322`；
+  构建预览使用 `npm run preview -- --host 0.0.0.0 --port 4333`，源码更新后需重新
+  build 才更新 4333。局域网 IP 以当前主机地址为准，personalPAGE 仅存素材与缓存。
 - Git 和网页维护统一在本仓库；素材、候选、中间产物、生成脚本、对照构建、
   测试截图及过程记录保存到相邻的 `personalPAGE/midocx/` 素材库，不推送。
 - 发布目录只保留实际使用资源；两张已批准头像是未选资源的唯一例外。

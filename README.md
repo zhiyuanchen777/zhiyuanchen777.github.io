@@ -14,16 +14,31 @@ existing GitHub Pages workflow and typed content data remain the source of truth
 The site requires Node.js 22.12 or newer.
 
 ```bash
+cd /home/chenzhiyuan/Documents/zhiyuanchen777.github.io
 nvm use
 npm ci
-npm run dev
+npm run dev -- --host 0.0.0.0 --port 4322
 ```
+
+<!-- by cgpt: Both local servers use this working tree, not the material archive. -->
+The development preview is `http://10.169.12.108:4322/`
+(`http://127.0.0.1:4322/` on this machine); it updates when source files change.
+The LAN address depends on the machine's current network.
 
 Build the production site with:
 
 ```bash
 npm run build
 ```
+
+To preview the latest production build from the same directory:
+
+```bash
+npm run preview -- --host 0.0.0.0 --port 4333
+```
+
+This serves `http://10.169.12.108:4333/` (or `http://127.0.0.1:4333/`).
+Run `npm run build` again after source changes to update this production preview.
 
 The online homepage is `https://zhiyuanchen777.github.io/`. Local `dist/` and
 `.astro/` outputs are generated files and remain ignored by Git.
@@ -116,8 +131,9 @@ until a public URL is supplied; its project page currently uses `#` for that lin
 To activate it, replace the Paper entry's `note` with `href` in `profile.ts`.
 <!-- by cgpt: Publication classifications, summaries, and media provenance. -->
 The displayed publications each include a one-sentence research summary.
-`venueBadge` displays the author's requested classifications: CoRL as
-`Top Conference`, TIM and AEI as `Top Journal`, JCEM as `Q1`, and NAMRC as `Q3`.
+`venueBadge`/`venueBadges` displays the author's requested classifications: CoRL as
+`Top Conference`, IEEE TIM and AEI as separate `Q1` and `Top Journal` badges, JCEM as `Q1`, and Manufacturing
+Letters without a quartile label.
 CIN uses the static `public/images/publications/cin-figure12-ab-by-cgpt.png`,
 extracted directly from Figure 12(a)(b) on page 13 of the published CC BY paper
 ([Feng et al., 2020](https://doi.org/10.1155/2020/7179647)). Its complete author
@@ -224,10 +240,16 @@ GitHub activity feed, and calendar are not copied into this site.
 Pushing `main` triggers `.github/workflows/deploy.yml`. In the repository
 settings, GitHub Pages should use **GitHub Actions** as its source.
 
+<!-- by cgpt: Keep all future Git operations on the new personal homepage repository. -->
+The `origin` remote is `git@github.com:zhiyuanchen777/zhiyuanchen777.github.io.git`,
+and local `main` tracks `origin/main`. Run future commits and pushes from
+`/home/chenzhiyuan/Documents/zhiyuanchen777.github.io`; commit and push only
+within the user's authorized scope.
+
 ## Maintenance and media boundary — by cgpt
 
 The only website maintenance repository is
-`/home/chenzhiyuan/Documents/chenzhiyuan777.github.io`.
+`/home/chenzhiyuan/Documents/zhiyuanchen777.github.io`.
 This repository tracks the Astro source, necessary build/deployment configuration,
 and resources actually used by the website. `node_modules/`, `dist/`, and `.astro/`
 are generated local build files and stay ignored.

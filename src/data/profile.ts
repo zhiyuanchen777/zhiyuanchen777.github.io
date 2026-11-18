@@ -3,6 +3,8 @@ export type PublicationLink = {
   label: "Project" | "Paper" | "Video" | "Code" | "Report";
 } & ({ href: string; note?: never } | { href?: never; note?: string });
 
+export type VenueBadge = "Top Conference" | "Top Journal" | "Q1" | "Q3";
+
 export type Publication = {
   id?: string;
   title: string;
@@ -16,7 +18,9 @@ export type Publication = {
   // by cgpt: Identify a public report alongside a conference submission of the same work.
   versionNote?: string;
   // by cgpt: Display the author's requested venue classifications.
-  venueBadge?: "Top Conference" | "Top Journal" | "Q1" | "Q3";
+  venueBadge?: VenueBadge;
+  // by cgpt: Render multiple classifications as separate badges in the requested order.
+  venueBadges?: VenueBadge[];
   image?: string;
   // by cgpt: A pixel-exact first-frame cover defers the larger lossless animation.
   imagePoster?: string;
@@ -245,7 +249,7 @@ export const publications: Publication[] = [
     authorsHtml: "<strong>Zhiyuan Chen</strong>, Tiemin Li, Yao Jiang",
     venue: "IEEE Transactions on Instrumentation and Measurement",
     year: "2024",
-    venueBadge: "Top Journal",
+    venueBadges: ["Q1", "Top Journal"],
     // by cgpt: Pixel-exact lossless animation and full-resolution first-frame cover.
     image: "/videos/tim-ibvs/ibvs_overview_view2_2x_clean_clear-lossless-by-cgpt.webp",
     imagePoster: "/videos/tim-ibvs/ibvs_overview_view2_2x_clean_clear-poster-lossless-by-cgpt.webp",
@@ -267,7 +271,7 @@ export const publications: Publication[] = [
     authorsHtml: "<strong>Zhiyuan Chen</strong>, Yixiao Feng, Tiemin Li, Yao Jiang",
     venue: "Advanced Engineering Informatics",
     year: "2024",
-    venueBadge: "Top Journal",
+    venueBadges: ["Q1", "Top Journal"],
     // by cgpt: Pixel-exact lossless animation and full-resolution first-frame cover.
     image: "/videos/aei/aei_overview_preview_clear-lossless-by-cgpt.webp",
     imagePoster: "/videos/aei/aei_overview_preview_clear-poster-lossless-by-cgpt.webp",
@@ -311,7 +315,6 @@ export const publications: Publication[] = [
     authorsHtml: "<strong>Zhiyuan Chen</strong>, Tiemin Li",
     venue: "Manufacturing Letters",
     year: "2023",
-    venueBadge: "Q3",
     // by cgpt: Pixel-exact lossless animation and full-resolution first-frame cover.
     image: "/videos/namrc/namrc_overview_preview_clear-lossless-by-cgpt.webp",
     imagePoster: "/videos/namrc/namrc_overview_preview_clear-poster-lossless-by-cgpt.webp",

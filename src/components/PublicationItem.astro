@@ -128,7 +128,10 @@ const mediaLabelPosition = publication.mediaLabelPosition;
     <!-- by cgpt: Venue classifications follow the author's requested labels. -->
     <p class="publication-meta">
       <span><OrganizationText text={`${publication.year} · ${publication.venue}`} size={14} /></span>
-      {publication.venueBadge && (
+      {publication.venueBadges?.map((badge) => (
+        <span class="publication-venue-badge">{badge}</span>
+      ))}
+      {!publication.venueBadges && publication.venueBadge && (
         <span class="publication-venue-badge">{publication.venueBadge}</span>
       )}
     </p>
