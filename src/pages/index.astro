@@ -88,6 +88,13 @@ const personSchema = {
                     )}
                     <NewsTextByCgpt text={item.text} href={item.href}
                       linkText={item.linkText} emphasis={item.emphasis} />
+                    {/* by cgpt: Keep each supplemental link together and reuse the existing News link style. */}
+                    {item.links?.map((link) => (
+                      <Fragment>
+                        {" "}<a class="news-name-link-by-cgpt inline-atomic-by-cgpt inline-punctuation-by-cgpt"
+                          href={link.href} target="_blank" rel="noopener noreferrer">[{link.label}]</a>
+                      </Fragment>
+                    ))}
                     {item.jumpHref && (
                       <a
                         class="news-jump"

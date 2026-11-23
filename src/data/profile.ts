@@ -49,6 +49,8 @@ type NewsItem = {
   emphasis?: string[];
   icon?: "trophy";
   href?: string;
+  // by cgpt: Append verified interview or official coverage links without changing the News sentence.
+  links?: { label: string; href: string }[];
   jumpHref?: string;
   jumpLabel?: string;
 };
@@ -74,6 +76,15 @@ export const news: NewsItem[] = [
     jumpLabel: "View the ViTacX competition result",
   },
   {
+    // by cgpt: Keep one verified interview link; unverified WeChat coverage is omitted.
+    date: "2026",
+    text: "Interviewed by 42HOW on our research in robotic manipulation, from contact-aware policies to world-action models.",
+    emphasis: ["42HOW"],
+    links: [
+      { label: "Interview", href: "https://ai.42how.com/article/25a85ba4-976b-4774-b968-27586842d199" },
+    ],
+  },
+  {
     date: "2026",
     // by cgpt: Highlight predictive tactile guidance alongside the preprint and review status.
     text: "Predictive tactile guidance: ForeTac is available on arXiv and under review at IEEE RA-L.",
@@ -90,6 +101,10 @@ export const news: NewsItem[] = [
     linkText: "PACE",
     emphasis: ["Reactive tactile policies", "Oral Presentation"],
     href: "https://pace-insertion.github.io/",
+    links: [
+      { label: "Xiaomi Weibo", href: "https://m.weibo.cn/2/detail/5364371779751586" },
+      { label: "Xiaomi Xiaohongshu", href: "https://xhslink.cn/o/AiSjPb2wCeo" },
+    ],
     jumpHref: "#publication-pace",
     jumpLabel: "View the PACE publication",
   },
@@ -220,12 +235,13 @@ export const publications: Publication[] = [
     ],
   },
   {
-    // by cgpt: MobiCom 2027 submission; keep the author line anonymous until review.
+    // by cgpt: Accepted to MobiCom 2027 in November 2026; retain the existing author line.
     title: "ALTER: Keeping Vision-Language-Action Control in Step with Real-World Dynamics",
     authors: "Co-author",
     authorsHtml: "Co-author",
-    venue: "MobiCom 2027 (Under Review)",
+    venue: "MobiCom 2027 (Accepted)",
     year: "2026",
+    venueBadge: "Top Conference",
     // by cgpt: Official real-robot obstacle clips, aligned at board insertion with the full view preserved.
     // by cgpt: Pixel-exact lossless animation and full-resolution first-frame cover.
     image: "/videos/alter/alter-obstacle-board-comparison-lossless-by-cgpt.webp",
@@ -233,7 +249,7 @@ export const publications: Publication[] = [
     imageAlt:
       "Real-robot obstacle comparison: pi0.5 tips the bowl after a board is introduced, while ALTER lifts the block over the board and places it in the bowl",
     mediaAspect: "wide",
-    mediaLabel: "MobiCom 2027 (Under Review)",
+    mediaLabel: "MobiCom 2027 (Accepted)",
     summary:
       "ALTER couples periodic server-side action-chunk generation with lightweight on-device refinement, keeping VLA control responsive to fresh observations while reducing server invocations.",
     links: [
