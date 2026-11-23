@@ -249,7 +249,7 @@ export const publications: Publication[] = [
     imageAlt:
       "Real-robot obstacle comparison: pi0.5 tips the bowl after a board is introduced, while ALTER lifts the block over the board and places it in the bowl",
     mediaAspect: "wide",
-    mediaLabel: "MobiCom 2027 (Accepted)",
+    mediaLabel: "MobiCom 2027",
     summary:
       "ALTER couples periodic server-side action-chunk generation with lightweight on-device refinement, keeping VLA control responsive to fresh observations while reducing server invocations.",
     links: [
