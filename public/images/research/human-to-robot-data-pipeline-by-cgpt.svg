@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" role="img" aria-labelledby="title desc">
+  <title id="title">Human-to-Robot Data Pipeline</title>
+  <desc id="desc">Original concept illustration of human video, 3D hand reconstruction, motion retargeting, and processed robot actions. This depicts general concepts, not an internal implementation or experiment.</desc>
+  <!-- by cgpt: Original generic geometry; no company screenshots, hardware models or internal implementation. -->
+  <defs>
+    <marker id="arrow" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0 0 6 3.5 0 7" fill="none" stroke="#8a9db8" stroke-width="1.5"/></marker>
+    <g id="hand" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M29 159 8 114Q1 101 10 96T29 102L42 119V43Q42 28 53 28T65 43V91 21Q65 7 77 7T89 21V91 35Q89 21 101 21T113 35V96 57Q113 43 125 43T137 57V132Q137 151 122 168V183H51V168Z"/>
+    </g>
+    <g id="robot-hand" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="round">
+      <path d="M45 119 20 101 7 110 33 149 45 160V182H119V161L135 140V76H116V119 45H97V115 29H78V114 44H59V123Z"/>
+      <path d="M59 71H78M78 56H97M97 73H116M116 101H135M49 156H119M45 132H119" stroke-width="5"/>
+      <circle cx="82" cy="139" r="9" stroke-width="5"/>
+    </g>
+  </defs>
+  <!-- by cgpt: Match the adjacent 2:1 ICL video without distorting the diagram. -->
+  <rect width="960" height="480" rx="16" fill="#f4f7fb"/>
+  <g font-family="Trebuchet MS, Helvetica, Arial, sans-serif" text-anchor="middle">
+    <text x="480" y="51" fill="#224b8d" font-size="33" font-weight="700">From human demonstrations to robot actions</text>
+    <!-- by cgpt: Equal cards and shared title, illustration and caption rows. -->
+    <g id="pipeline-cards" fill="#fff" stroke="#dbe4ef" stroke-width="2">
+      <rect x="24" y="85" width="204" height="355" rx="15"/>
+      <rect x="260" y="85" width="204" height="355" rx="15"/>
+      <rect x="496" y="85" width="204" height="355" rx="15"/>
+      <rect x="732" y="85" width="204" height="355" rx="15"/>
+    </g>
+    <g id="pipeline-connectors" fill="none" stroke="#8a9db8" stroke-width="3.5" marker-end="url(#arrow)">
+      <path d="M235 288.5H252"/><path d="M471 288.5H488"/><path d="M707 288.5H724"/>
+    </g>
+    <g id="pipeline-headings" fill="#224b8d" font-size="32" font-weight="700">
+      <text x="126" y="137">Human<tspan x="126" dy="38" font-size="26">video</tspan></text>
+      <text x="362" y="137">3D hand<tspan x="362" dy="38" font-size="26">reconstruction</tspan></text>
+      <text x="598" y="137">Motion<tspan x="598" dy="38" font-size="26">retargeting</tspan></text>
+      <text x="834" y="137">Robot<tspan x="834" dy="38" font-size="26">actions</tspan></text>
+    </g>
+    <!-- A generic egocentric frame and hand silhouette. -->
+    <g id="pipeline-human" transform="translate(43 215)" fill="none" stroke="#8a9db8" stroke-width="4">
+      <rect width="166" height="147" rx="9" fill="#f4f7fb"/>
+      <path d="M13 26V13H28M138 13H153V26M13 121V134H28M138 134H153V121"/>
+      <use href="#hand" transform="translate(40 12) scale(.64)" color="#496d9e"/>
+    </g>
+    <!-- Hand landmarks are schematic and carry no measured coordinates. -->
+    <g id="pipeline-hand" transform="translate(292 205)" fill="none" stroke="#496d9e" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M57 157 18 93 4 70M57 157 37 88 35 51 33 24M57 157 65 81 65 42 65 9M57 157 92 87 97 52 102 27M57 157 117 103 128 80 136 60M37 88 65 81 92 87 117 103"/>
+      <g fill="#fff" stroke="#496d9e" stroke-width="4">
+        <circle cx="57" cy="157" r="7"/><circle cx="18" cy="93" r="6"/><circle cx="4" cy="70" r="6"/>
+        <circle cx="37" cy="88" r="6"/><circle cx="35" cy="51" r="6"/><circle cx="33" cy="24" r="6"/>
+        <circle cx="65" cy="81" r="6"/><circle cx="65" cy="42" r="6"/><circle cx="65" cy="9" r="6"/>
+        <circle cx="92" cy="87" r="6"/><circle cx="97" cy="52" r="6"/><circle cx="102" cy="27" r="6"/>
+        <circle cx="117" cy="103" r="6"/><circle cx="128" cy="80" r="6"/><circle cx="136" cy="60" r="6"/>
+      </g>
+    </g>
+    <!-- Generic robot fingers, without a manufacturer's geometry. -->
+    <use id="pipeline-robot" href="#robot-hand" transform="translate(532 190.4) scale(.93)" color="#496d9e"/>
+    <!-- A processed trajectory and gripper represent executable action output. -->
+    <g id="pipeline-actions" transform="translate(.75 5.75)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M758 349C780 349 782 288 805 287S838 304 849 272 869 242 892 242" stroke="#c5d3e5" stroke-width="4" stroke-dasharray="6 9"/>
+      <path d="M758 349C787 349 785 301 815 292S846 294 860 269 878 242 892 242" stroke="#f57921" stroke-width="7"/>
+      <g transform="translate(853 211)" stroke="#496d9e" stroke-width="6">
+        <path d="M16 0V22M0 22H32M0 22V47L8 55M32 22V47L24 55"/>
+      </g>
+      <circle cx="758" cy="349" r="7" fill="#f57921" stroke="#fff" stroke-width="3"/>
+      <path d="M880 341 891 352 914 329" stroke="#496d9e" stroke-width="6"/>
+    </g>
+    <g id="pipeline-captions" fill="#687178" font-size="26">
+      <text x="126" y="392">Egocentric<tspan x="126" dy="31">demonstrations</tspan></text>
+      <text x="362" y="392">Reconstructed<tspan x="362" dy="31">hand motion</tspan></text>
+      <text x="598" y="392">Retargeted<tspan x="598" dy="31">robot motion</tspan></text>
+      <text x="834" y="392">Trajectory<tspan x="834" dy="31">processing</tspan></text>
+    </g>
+  </g>
+</svg>

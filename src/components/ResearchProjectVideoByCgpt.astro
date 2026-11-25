@@ -1,0 +1,62 @@
+---
+// by cgpt: Reuse the existing video adapter and media queue for project demos.
+interface Props {
+  video: {
+    src: string;
+    poster: string;
+    alt: string;
+    width: number;
+    height: number;
+  };
+}
+const { video } = Astro.props;
+---
+
+<!-- by cgpt: Share a 16:9 frame while retaining each video's intrinsic dimensions. -->
+<div class="publication-media research-project-media-by-cgpt research-project-video-by-cgpt">
+  <video data-publication-video-by-cgpt data-video-src={video.src}
+    poster={video.poster} width={video.width} height={video.height}
+    preload="none" autoplay muted loop playsinline aria-label={video.alt} />
+  <img class="publication-video-cover-by-cgpt" data-video-cover-by-cgpt
+    data-publication-cover-by-cgpt src={video.poster}
+    alt="" aria-hidden="true" width={video.width} height={video.height}
+    loading="lazy" decoding="async" />
+  <button type="button" class="publication-video-recovery-by-cgpt"
+    data-video-recovery-by-cgpt hidden aria-label="Play video">Play video</button>
+  <noscript>
+    <style is:inline>
+      .research-project-video-by-cgpt > video[data-publication-video-by-cgpt],
+      .research-project-video-by-cgpt > img[data-video-cover-by-cgpt] { display: none; }
+    </style>
+    <video src={video.src} poster={video.poster}
+      width={video.width} height={video.height} preload="metadata"
+      autoplay muted loop playsinline controls controlslist="nodownload"
+      disablepictureinpicture aria-label={video.alt} />
+  </noscript>
+</div>
+
+<script>
+  import "../scripts/publication-video-by-cgpt";
+</script>
+
+<style>
+  /* by cgpt: Match the existing player's recovery overlay without shifting the card. */
+  .publication-video-recovery-by-cgpt {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    padding: 6px 12px;
+    color: #fff;
+    background: #194c87;
+    font: inherit;
+    font-size: 13px;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+  .publication-video-recovery-by-cgpt[hidden] { display: none; }
+  .publication-video-recovery-by-cgpt:focus-visible { outline: 3px solid #e5a020; }
+</style>

@@ -136,7 +136,7 @@ export const publications: Publication[] = [
     title: "PACE: Temporal-Role Tactile Conditioning for Chunk-Based Insertion Policies",
     authors: "Zhiyuan Chen, Shixiong Xu, Shuai Chen, Yangwei You",
     authorsHtml:
-      "<strong>Zhiyuan Chen</strong><sup>*</sup>, Shixiong Xu, Shuai Chen, Yangwei You",
+      "<strong><u>Zhiyuan Chen</u></strong><sup>*</sup>, Shixiong Xu, Shuai Chen, Yangwei You",
     correspondingAuthorNote: "* Corresponding Author",
     // by cgpt: Include the requested Top 1% label in the venue and media overlay.
     venue: "CoRL 2026 (Oral · Top 1%)",
@@ -168,7 +168,7 @@ export const publications: Publication[] = [
     id: "publication-foretac",
     title: "ForeTac: Predictive Contact Guidance for Generative Robot Policies",
     authors: "Zhiyuan Chen, et al.",
-    authorsHtml: "<strong>Zhiyuan Chen</strong><sup>*</sup>, et al.",
+    authorsHtml: "<strong><u>Zhiyuan Chen</u></strong><sup>*</sup>, et al.",
     correspondingAuthorNote: "* Corresponding Author",
     venue: "IEEE Robotics and Automation Letters (Under Review)",
     year: "2026",
@@ -194,7 +194,7 @@ export const publications: Publication[] = [
     authors:
       "Shixiong Xu, Zhiyuan Chen, Song Ding, Rui Luo, Xiaowei Liang, Dongxu Miao, Zhiying Du",
     authorsHtml:
-      "Shixiong Xu, <strong>Zhiyuan Chen</strong>, Song Ding, Rui Luo, Xiaowei Liang, Dongxu Miao, Zhiying Du",
+      "Shixiong Xu, <strong><u>Zhiyuan Chen</u></strong>, Song Ding, Rui Luo, Xiaowei Liang, Dongxu Miao, Zhiying Du",
     venue: "ICRA 2027 (Under Review)",
     year: "2026",
     image: "/images/publications/finder-overview-by-cgpt.png",
@@ -262,7 +262,7 @@ export const publications: Publication[] = [
     title:
       "Image-Based Visual Servoing With Collision-Free Path Planning for Monocular Vision-Guided Assembly",
     authors: "Zhiyuan Chen, Tiemin Li, Yao Jiang",
-    authorsHtml: "<strong>Zhiyuan Chen</strong>, Tiemin Li, Yao Jiang",
+    authorsHtml: "<strong><u>Zhiyuan Chen</u></strong>, Tiemin Li, Yao Jiang",
     venue: "IEEE Transactions on Instrumentation and Measurement",
     year: "2024",
     venueBadges: ["Q1", "Top Journal"],
@@ -284,7 +284,7 @@ export const publications: Publication[] = [
     title:
       "Object-based Terminal Positioning Solution within Task-boosted Global Constraint for Improving Mobile Robotic Stacking Accuracy",
     authors: "Zhiyuan Chen, Yixiao Feng, Tiemin Li, Yao Jiang",
-    authorsHtml: "<strong>Zhiyuan Chen</strong>, Yixiao Feng, Tiemin Li, Yao Jiang",
+    authorsHtml: "<strong><u>Zhiyuan Chen</u></strong>, Yixiao Feng, Tiemin Li, Yao Jiang",
     venue: "Advanced Engineering Informatics",
     year: "2024",
     venueBadges: ["Q1", "Top Journal"],
@@ -306,7 +306,7 @@ export const publications: Publication[] = [
     title:
       "Vision-Guided Autonomous Block Loading in a Dual-Robot Collaborative Handling Framework",
     authors: "Zhiyuan Chen, Tiemin Li, Lichang Qin, Yao Jiang",
-    authorsHtml: "<strong>Zhiyuan Chen</strong>, Tiemin Li, Lichang Qin, Yao Jiang",
+    authorsHtml: "<strong><u>Zhiyuan Chen</u></strong>, Tiemin Li, Lichang Qin, Yao Jiang",
     venue: "Journal of Construction Engineering and Management",
     year: "2025",
     venueBadge: "Q1",
@@ -328,7 +328,7 @@ export const publications: Publication[] = [
     title:
       "Precise Geometry and Pose Measurement of In-hand Objects with Simple Features Using a Multi-camera System",
     authors: "Zhiyuan Chen, Tiemin Li",
-    authorsHtml: "<strong>Zhiyuan Chen</strong>, Tiemin Li",
+    authorsHtml: "<strong><u>Zhiyuan Chen</u></strong>, Tiemin Li",
     venue: "Manufacturing Letters",
     year: "2023",
     // by cgpt: Pixel-exact lossless animation and full-resolution first-frame cover.
@@ -351,7 +351,7 @@ export const publications: Publication[] = [
       "A Cross-Reference Line Method Based Multiobjective Evolutionary Algorithm to Enhance Population Diversity",
     authors: "Ya-Nan Feng, Zhao-Hui Wang, Jia-Rong Fan, Ting Fu, Zhi-Yuan Chen",
     authorsHtml:
-      "Ya-Nan Feng, Zhao-Hui Wang, Jia-Rong Fan, Ting Fu, <strong>Zhi-Yuan Chen</strong>",
+      "Ya-Nan Feng, Zhao-Hui Wang, Jia-Rong Fan, Ting Fu, <strong><u>Zhi-Yuan Chen</u></strong>",
     venue: "Computational Intelligence and Neuroscience",
     year: "2020",
     image: "/images/publications/cin-figure12-ab-by-cgpt.png",
@@ -391,31 +391,77 @@ export const researchProjects = [
   {
     type: "R&D",
     organization: "Xiaomi Robotics",
-    title: "Egocentric Learning for Dexterous Manipulation",
+    // by cgpt: Use the author's current ICL project and original paired rollout.
+    title: "In-Context Learning for Dexterous Manipulation",
     description:
-      "Exploring egocentric learning and world-action models for dexterous robotic manipulation, with a focus on transferring human demonstrations to robotic hands and enabling generalizable manipulation skills.",
+      "Exploring world-action models and in-context learning to enable robots to generalize to novel manipulation tasks from human video demonstrations.",
+    video: {
+      src: "/videos/research/icl/7_paired.mp4",
+      poster: "/videos/research/icl/7_paired-poster.png",
+      alt: "Paired towel-folding demonstration: human video on the left and simulated robot rollout on the right",
+      width: 1024,
+      height: 512,
+    },
+    logo: "/images/xiaomi.png",
+  },
+  {
+    // by cgpt: Insert the approved RL project between ICL and the data pipeline.
+    type: "R&D",
+    organization: "Xiaomi Robotics",
+    title: "Reinforcement Learning for Dexterous Screwdriving",
+    description:
+      "Exploring reinforcement learning for robust, contact-rich dexterous manipulation, with a focus on screwdriving and tool use.",
+    video: {
+      src: "/videos/research/screwdriving/rl_screwdriving_teaser_orange.mp4",
+      poster: "/videos/research/screwdriving/screwdriving_cover_orange.png",
+      alt: "Reinforcement learning for dexterous screwdriving and tool use",
+      width: 960,
+      height: 540,
+    },
     logo: "/images/xiaomi.png",
   },
   {
     type: "R&D",
     organization: "Xiaomi Robotics",
-    title: "EgoData Processing Pipeline",
+    // by cgpt: Keep the three pipeline stages concise alongside the ICL project.
+    title: "Human2Robot Data Pipeline",
     description:
-      "Creating data processing and curation pipelines for EgoData to support scalable robot learning.",
+      "Turning egocentric demonstrations into robot-executable actions through 3D hand reconstruction, motion retargeting, and trajectory processing.",
+    image: {
+      src: "/images/research/human-to-robot-data-pipeline-by-cgpt.svg",
+      alt: "Concept illustration: human video demonstrations are reconstructed as 3D hand motion, retargeted, and processed into robot-executable actions",
+      width: 960,
+      height: 480,
+    },
     logo: "/images/xiaomi.png",
   },
   {
     type: "Competition",
     organization: "Xiaomi Robotics",
-    title: "WorldArena 2.0 Challenge",
+    // by cgpt: Keep the complete supplied competition teaser and its category labels.
+    title: "WorldArena 2.0 Challenge — Champion",
     description:
-      "Designed the ViTacX model and led the team to first place in the IROS 2026 WorldArena 2.0 Real Robot Track (Track 3).",
+      "Developing ViTacX, a visuo-tactile world-action model for robotic manipulation, and achieving first place in the IROS 2026 WorldArena 2.0 real-world track.",
+    video: {
+      src: "/videos/research/worldarena/worldarena_vitacx_teaser_orange.mp4",
+      poster: "/videos/research/worldarena/worldarena_cover_orange.png",
+      alt: "ViTacX overview and WorldArena 2.0 vision and tactile tasks",
+      width: 960,
+      height: 540,
+    },
     logo: "/images/xiaomi.png",
   },
   {
     type: "R&D",
     organization: "Xiaomi Robotics",
     title: "From Reactive to Predictive Tactile Policies for Contact-Rich Manipulation",
+    // by cgpt: Display the author's original GIF below this project's description.
+    image: {
+      src: "/images/research/Reactive_vs_Predictive_Tactile_STABLE.gif",
+      alt: "Side-by-side comparison of reactive tactile feedback (PACE) and predictive tactile guidance (ForeTac) for contact-rich manipulation",
+      width: 960,
+      height: 540,
+    },
     description:
       "Developing tactile policies for contact-rich robotic manipulation, from reactive feedback to predictive, contact-aware control.",
     logo: "/images/xiaomi.png",
@@ -423,9 +469,17 @@ export const researchProjects = [
   {
     type: "R&D",
     organization: "Xiaomi Robotics",
-    title: "Vision-Language-Action Models and Infrastructure",
+    // by cgpt: Use the supplied VLA infrastructure MP4 and PNG poster.
+    title: "Vision-Language-Action Infrastructure",
     description:
-      "Building vision-language-action models and supporting infrastructure for general-purpose robotic manipulation.",
+      "Building end-to-end VLA infrastructure spanning data engineering, model training, evaluation, and real-world deployment for scalable robot learning.",
+    video: {
+      src: "/videos/research/vla/vla_infrastructure_animation_orange.mp4",
+      poster: "/videos/research/vla/vla_infrastructure_poster_orange.png",
+      alt: "VLA infrastructure from data engineering through model training, evaluation, and real-world deployment",
+      width: 960,
+      height: 540,
+    },
     logo: "/images/xiaomi.png",
   },
   {
@@ -435,6 +489,14 @@ export const researchProjects = [
     title: "Vision-Guided Bin-Picking",
     description:
       "Developed and deployed vision-guided bin-picking on real robots, with related work covered by a granted patent.",
+    // by cgpt: Use the supplied full concept animation and its original cover.
+    video: {
+      src: "/videos/research/bin-picking/industrial_bin_picking_teaser_orange.mp4",
+      poster: "/videos/research/bin-picking/industrial_bin_picking_cover_orange.png",
+      alt: "Industrial bin-picking concept animation illustrating robotic sorting of cluttered parts",
+      width: 960,
+      height: 540,
+    },
     logo: "/images/xiaomi.png",
   },
 ];
@@ -466,7 +528,7 @@ const patentRecords: Patent[] = [
     titleEn: "Robot System and Measurement and Control Method",
     titleZh: "一种机器人系统以及测控方法",
     authors: "Yao Jiang, Zhiyuan Chen, Fengchun Li, Tiemin Li",
-    authorsHtml: "Yao Jiang, <strong>Zhiyuan Chen</strong>, Fengchun Li, Tiemin Li",
+    authorsHtml: "Yao Jiang, <strong><u>Zhiyuan Chen</u></strong>, Fengchun Li, Tiemin Li",
     cnkiPublicNumber: "CN112123342B",
     number: "ZL202011333511.7",
     date: "2021-03-23",
@@ -477,7 +539,7 @@ const patentRecords: Patent[] = [
     titleEn: "Object Storage, Retrieval, and Measurement Device",
     titleZh: "物品存取及测量装置",
     authors: "Yao Jiang, Zhiyuan Chen, Fengchun Li, Tiemin Li",
-    authorsHtml: "Yao Jiang, <strong>Zhiyuan Chen</strong>, Fengchun Li, Tiemin Li",
+    authorsHtml: "Yao Jiang, <strong><u>Zhiyuan Chen</u></strong>, Fengchun Li, Tiemin Li",
     cnkiPublicNumber: "CN111872944B",
     number: "ZL202010454402.4",
     date: "2021-07-09",
@@ -488,7 +550,7 @@ const patentRecords: Patent[] = [
     titleEn: "Robot, Control and Calibration Methods and Devices, and Storage Medium",
     titleZh: "机器人及其控制方法和控制装置、标定方法和标定控制装置、存储介质",
     authors: "Yao Jiang, Zhiyuan Chen, Tiemin Li",
-    authorsHtml: "Yao Jiang, <strong>Zhiyuan Chen</strong>, Tiemin Li",
+    authorsHtml: "Yao Jiang, <strong><u>Zhiyuan Chen</u></strong>, Tiemin Li",
     cnkiPublicNumber: "CN114055444B",
     number: "ZL202111290387.5",
     date: "2023-04-07",
@@ -499,7 +561,7 @@ const patentRecords: Patent[] = [
     titleEn: "Target-Guided Robot System for FPC Assembly and Its Control Method and Device",
     titleZh: "用于FPC装配的目标引导式机器人系统及其控制方法、装置",
     authors: "Yao Jiang, Zhiyuan Chen, Tiemin Li, Siyuan Feng",
-    authorsHtml: "Yao Jiang, <strong>Zhiyuan Chen</strong>, Tiemin Li, Siyuan Feng",
+    authorsHtml: "Yao Jiang, <strong><u>Zhiyuan Chen</u></strong>, Tiemin Li, Siyuan Feng",
     cnkiPublicNumber: "CN117283570B",
     number: "ZL202311549760.3",
     date: "2024-03-12",
@@ -510,7 +572,7 @@ const patentRecords: Patent[] = [
     titleEn: "Robot System, Measurement and Control Method, and Planar Laser Receiver",
     titleZh: "机器人系统及其测控方法和面激光接受器",
     authors: "Yao Jiang, Xiangyu Tian, Zhiyuan Chen, Tiemin Li",
-    authorsHtml: "Yao Jiang, Xiangyu Tian, <strong>Zhiyuan Chen</strong>, Tiemin Li",
+    authorsHtml: "Yao Jiang, Xiangyu Tian, <strong><u>Zhiyuan Chen</u></strong>, Tiemin Li",
     cnkiPublicNumber: "CN114102622B",
     number: "ZL202111388884.9",
     date: "2023-07-14",
@@ -521,7 +583,7 @@ const patentRecords: Patent[] = [
     titleEn: "Automatic Assembly System for Smartphone Steel Retaining Plates, Control Method, and Storage Medium",
     titleZh: "手机钢压片自动装配系统、控制方法及存储介质",
     authors: "Siyuan Feng, Zhiyuan Chen",
-    authorsHtml: "Siyuan Feng, <strong>Zhiyuan Chen</strong>",
+    authorsHtml: "Siyuan Feng, <strong><u>Zhiyuan Chen</u></strong>",
     cnkiPublicNumber: "CN117620965A",
     number: "ZL202311447393.6",
     date: "2026-05-26",
@@ -533,7 +595,7 @@ const patentRecords: Patent[] = [
     titleZh: "一种可伸缩花盆",
     hideChineseTitle: true,
     authors: "Zhiyuan Chen, Yuxi Zhou",
-    authorsHtml: "<strong>Zhiyuan Chen</strong>, Yuxi Zhou",
+    authorsHtml: "<strong><u>Zhiyuan Chen</u></strong>, Yuxi Zhou",
     number: "ZL201720301930.X",
     date: "2017-11-24",
     status: "Granted",
@@ -544,7 +606,7 @@ const patentRecords: Patent[] = [
     titleZh: "花盆鱼缸结合装置",
     hideChineseTitle: true,
     authors: "Kai Le, Haixin Chen, Zhiyuan Chen",
-    authorsHtml: "Kai Le, Haixin Chen, <strong>Zhiyuan Chen</strong>",
+    authorsHtml: "Kai Le, Haixin Chen, <strong><u>Zhiyuan Chen</u></strong>",
     number: "ZL201721270890.3",
     date: "2018-05-01",
     status: "Granted",
@@ -554,7 +616,7 @@ const patentRecords: Patent[] = [
     titleEn: "Robot Control Method, Apparatus, Device, Chip, and Medium",
     titleZh: "机器人的控制方法、装置、设备、芯片和介质",
     authors: "Zhiyuan Chen, Shuai Chen",
-    authorsHtml: "<strong>Zhiyuan Chen</strong>, Shuai Chen",
+    authorsHtml: "<strong><u>Zhiyuan Chen</u></strong>, Shuai Chen",
     date: "2026-08-12",
     status: "Initial examination passed",
     awardingOrganization: "National Intellectual Property Administration of China",
@@ -563,7 +625,7 @@ const patentRecords: Patent[] = [
     titleEn: "Robot Control Method, Apparatus, Robot System, and Storage Medium",
     titleZh: "一种机器人的控制方法、装置、机器人系统及存储介质",
     authors: "Zhiyuan Chen, Yangwei You, Shuai Chen",
-    authorsHtml: "<strong>Zhiyuan Chen</strong>, Yangwei You, Shuai Chen",
+    authorsHtml: "<strong><u>Zhiyuan Chen</u></strong>, Yangwei You, Shuai Chen",
     date: "2026-05-28",
     status: "Initial examination passed",
     awardingOrganization: "National Intellectual Property Administration of China",
@@ -572,7 +634,7 @@ const patentRecords: Patent[] = [
     titleEn: "Data Collection Method and Apparatus, System, Electronic Device, and Medium",
     titleZh: "一种数据采集方法及装置、系统、电子设备及介质",
     authors: "Zhiyuan Chen, Yangwei You, Tianlin Liu",
-    authorsHtml: "<strong>Zhiyuan Chen</strong>, Yangwei You, Tianlin Liu",
+    authorsHtml: "<strong><u>Zhiyuan Chen</u></strong>, Yangwei You, Tianlin Liu",
     date: "2026-05-28",
     status: "Initial examination passed",
     awardingOrganization: "National Intellectual Property Administration of China",
@@ -583,7 +645,7 @@ const patentRecords: Patent[] = [
     titleEn: "Manipulator Control Method, Apparatus, Manipulator, Robot, Medium, and Product",
     titleZh: "机械手的控制方法、装置、机械手、机器人、介质及产品",
     authors: "Zhiyuan Chen, Dongxiao Yang, Ran Cao, Yangwei You",
-    authorsHtml: "<strong>Zhiyuan Chen</strong>, Dongxiao Yang, Ran Cao, Yangwei You",
+    authorsHtml: "<strong><u>Zhiyuan Chen</u></strong>, Dongxiao Yang, Ran Cao, Yangwei You",
     number: "CN122165449A", // by cgpt: application publication number from the local patent record.
     date: "2026-09-18",
     status: "Granted",
@@ -593,7 +655,7 @@ const patentRecords: Patent[] = [
     titleEn: "Manipulator Control Method, Apparatus, Manipulator, Robotic Arm, Robot, and Chip",
     titleZh: "机械手控制方法、装置、机械手、机械臂、机器人和芯片",
     authors: "Dongxiao Yang, Zhiyuan Chen",
-    authorsHtml: "Dongxiao Yang, <strong>Zhiyuan Chen</strong>",
+    authorsHtml: "Dongxiao Yang, <strong><u>Zhiyuan Chen</u></strong>",
     number: "CN122518342A", // by cgpt: application publication number from the local patent record.
     date: "2026-05-08",
     status: "Published",
@@ -603,7 +665,7 @@ const patentRecords: Patent[] = [
     titleEn: "Robot Control Method and Apparatus, Electronic Device, and Storage Medium",
     titleZh: "机器人控制方法及装置、电子设备及存储介质",
     authors: "Zhiyuan Chen, Ran Cao, Yangwei You, Kun Zhang",
-    authorsHtml: "<strong>Zhiyuan Chen</strong>, Ran Cao, Yangwei You, Kun Zhang",
+    authorsHtml: "<strong><u>Zhiyuan Chen</u></strong>, Ran Cao, Yangwei You, Kun Zhang",
     number: "CN122165415A", // by cgpt: application publication number from the local patent record.
     date: "2026-04-09",
     status: "Status not provided",

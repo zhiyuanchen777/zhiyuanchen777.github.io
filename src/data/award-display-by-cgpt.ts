@@ -26,7 +26,8 @@ const toDisplayRecord = (award: Award): AwardDisplayRecord => {
     ...award,
     recipients: recipientsEn,
     recipientsEn,
-    recipientsHtml: escapeHtml(recipientsEn).replaceAll("Zhiyuan Chen", "<strong>Zhiyuan Chen</strong>"),
+    // by cgpt: Match the author's bold and underlined name treatment across all lists.
+    recipientsHtml: escapeHtml(recipientsEn).replaceAll("Zhiyuan Chen", "<strong><u>Zhiyuan Chen</u></strong>"),
   };
 };
 

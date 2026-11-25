@@ -366,10 +366,25 @@ h3 {
   gap: 7.5px;
 }
 
-.news-list li {
+.news-list > li {
+  /* by cgpt: Reserve a compact gutter for a quiet bullet without shifting wrapped text. */
+  position: relative;
   display: grid;
-  grid-template-columns: 50px minmax(0, 1fr);
-  gap: 15px;
+  padding-left: 16px;
+  grid-template-columns: 40px minmax(0, 1fr);
+  gap: 10px;
+}
+
+.news-list > li::before {
+  /* by cgpt: Center a small neutral dot on the first line, outside the date/body grid. */
+  position: absolute;
+  top: calc(0.75em - 2px);
+  left: 0;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #929292;
+  content: "";
 }
 
 .news-list time {
@@ -658,12 +673,45 @@ h3 {
 
 .research-project-list {
   display: grid;
-  gap: 15px;
+  /* by cgpt: Keep tablet projects in reading order; wide screens use 3–2–2 below. */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px 24px;
 }
 
 .research-project {
+  min-width: 0;
   padding: 15px 0;
   border-bottom: 1px solid var(--line);
+}
+
+@media (min-width: 768px) {
+  /* by cgpt: Share rows so paired titles, descriptions and media align naturally. */
+  .research-project {
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 3;
+    row-gap: 0;
+    align-content: start;
+  }
+
+  .research-project > .research-project-media-by-cgpt {
+    align-self: start;
+  }
+}
+
+@media (min-width: 1280px) {
+  /* by cgpt: Six tracks allow three equal cards, followed by two pairs. */
+  .research-project-list {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .research-project {
+    grid-column: span 3;
+  }
+
+  .research-project:nth-child(-n + 3) {
+    grid-column: span 2;
+  }
 }
 
 .research-project-title {
@@ -674,19 +722,27 @@ h3 {
 }
 
 .research-project-title h3 {
+  /* by cgpt: Separate the icon from left-aligned text to avoid stretched leading gaps. */
+  display: flex;
+  flex: 1;
+  align-items: flex-start;
+  gap: 7px;
   min-width: 0;
   margin: 0;
   color: var(--accent);
   font-size: 1.05rem;
+  text-align: left;
+}
+
+.research-project-title-text-by-cgpt {
+  min-width: 0;
 }
 
 .research-project-title h3 img {
-  /* by cgpt: Keep the organization mark inline with the first title line. */
-  display: inline-block;
+  /* by cgpt: Keep the mark fixed while wrapped title lines share the same text edge. */
+  flex: 0 0 auto;
   width: 20px;
   height: 20px;
-  margin-right: 7px;
-  vertical-align: middle;
   object-fit: contain;
 }
 
@@ -700,7 +756,28 @@ h3 {
   line-height: 1;
 }
 
-/* by cgpt: Keep the initial text-only project introductions small and readable. */
+/* by cgpt: Equal 16:9 frames align all media edges without cropping source content. */
+.research-project-media-by-cgpt {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  margin-top: 12px;
+  border-radius: 8px;
+  background: #f4f7fb;
+}
+
+/* by cgpt: Preserve the paired video's full frame without publication shadows. */
+.research-project-video-by-cgpt > video,
+.research-project-video-by-cgpt > img,
+.research-project-video-by-cgpt > noscript > video {
+  object-fit: contain;
+  box-shadow: none;
+}
+
+/* by cgpt: Keep project introductions small and readable. */
 .research-project > p {
   margin: 10px 0 0;
   color: var(--muted);
@@ -984,6 +1061,11 @@ h3 {
 }
 
 @media (max-width: 767px) {
+  /* by cgpt: Stack project cards on phones so media and descriptions stay readable. */
+  .research-project-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   .publication-item {
     grid-template-columns: minmax(0, 1fr);
     gap: 20px;
