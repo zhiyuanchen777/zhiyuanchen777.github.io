@@ -66,10 +66,10 @@ export const news: NewsItem[] = [
   },
   {
     date: "2026",
-    // by cgpt: Emphasize the model name and result; keep descriptive context at normal weight.
+    // by cgpt: Emphasize the model, result and conference; keep ordinary text colors.
     text: "ViTacX, a visuotactile world-action model, won 1st place in the IROS 2026 · WorldArena 2.0 Real Robot Track (Track 3).",
     linkText: "ViTacX",
-    emphasis: ["1st place"],
+    emphasis: ["1st place", "IROS 2026"],
     icon: "trophy",
     href: "https://huggingface.co/spaces/WorldArena/WorldArena2.0",
     jumpHref: "#competition-worldarena-2026",
@@ -96,10 +96,10 @@ export const news: NewsItem[] = [
   },
   {
     date: "2026",
-    // by cgpt: Highlight reactive tactile policies and retain PACE's oral distinction.
+    // by cgpt: Highlight the conference alongside reactive tactile policies and PACE's oral distinction.
     text: "Reactive tactile policies: PACE was selected for an Oral Presentation at CoRL 2026.",
     linkText: "PACE",
-    emphasis: ["Reactive tactile policies", "Oral Presentation"],
+    emphasis: ["Reactive tactile policies", "Oral Presentation", "CoRL 2026"],
     href: "https://pace-insertion.github.io/",
     links: [
       { label: "Xiaomi Weibo", href: "https://m.weibo.cn/2/detail/5364371779751586" },
@@ -109,9 +109,10 @@ export const news: NewsItem[] = [
     jumpLabel: "View the PACE publication",
   },
   {
-    // by cgpt: Keep the grant news short; the curved arrow opens the full patent entry.
+    // by cgpt: Emphasize the granted invention patent; the arrow opens the full entry.
     date: "2026",
     text: "Robotic bin-picking invention patent granted.",
+    emphasis: ["invention patent granted"],
     jumpHref: "#patent-bin-picking",
     jumpLabel: "View the granted bin-picking patent",
   },
