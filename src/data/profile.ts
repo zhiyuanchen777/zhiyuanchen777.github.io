@@ -211,11 +211,11 @@ export const publications: Publication[] = [
   },
   {
     // by cgpt: Merge the AAAI submission and Xiaomi report as one UCAG-P work.
-    // by cgpt: Keep the anonymous review-stage author line concise.
+    // by cgpt: Identify the public report's team and the author's co-author role.
     title:
       "One Policy, Many Embodiments: Unified Camera-Centric Action Geometry Pre-training for Heterogeneous Embodied Manipulation",
-    authors: "Co-author",
-    authorsHtml: "Co-author",
+    authors: "Xiaomi team · Zhiyuan Chen (co-author)",
+    authorsHtml: "Xiaomi team · <strong><u>Zhiyuan Chen</u></strong> (co-author)",
     venue: "AAAI 2027 (Under Review)",
     year: "2026",
     versionNote: "2026 · Xiaomi Technical Report (public version)",
@@ -235,10 +235,10 @@ export const publications: Publication[] = [
     ],
   },
   {
-    // by cgpt: Accepted to MobiCom 2027 in November 2026; retain the existing author line.
+    // by cgpt: Accepted to MobiCom 2027 in November 2026; show the first five authors in order.
     title: "ALTER: Keeping Vision-Language-Action Control in Step with Real-World Dynamics",
-    authors: "Co-author",
-    authorsHtml: "Co-author",
+    authors: "Yizhe Zhao, Ruichun Ma, Xiaoyu Sun, Liang Hu, Zhiyuan Chen, et al.",
+    authorsHtml: "Yizhe Zhao, Ruichun Ma, Xiaoyu Sun, Liang Hu, <strong><u>Zhiyuan Chen</u></strong>, et al.",
     venue: "MobiCom 2027 (Accepted)",
     year: "2026",
     venueBadge: "Top Conference",
